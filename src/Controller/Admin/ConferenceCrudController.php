@@ -6,7 +6,6 @@ use App\Entity\Conference;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 
 class ConferenceCrudController extends AbstractCrudController
@@ -18,7 +17,6 @@ class ConferenceCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-       yield IdField::new('id');
        yield AssociationField::new('comments');
        yield TextField::new('city');
        yield TextField::new('year');
