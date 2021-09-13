@@ -21,6 +21,7 @@ class ConferenceCrudController extends AbstractCrudController
        yield TextField::new('city');
        yield TextField::new('year');
        yield BooleanField::new('isInternational');
+       yield TextField::new('slug');
 
     }
 }
