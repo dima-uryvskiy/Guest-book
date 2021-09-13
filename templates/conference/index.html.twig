@@ -2,10 +2,19 @@
 {% block title %}Conference Guestbook{% endblock %}
 {% block body %}
     <h2>Give your feedback!</h2>
-    {% for conference in conferences %}
-        <h4>{{ conference }}</h4>
+    {% for currentConference in conferences %}
         <p>
-            <a href="{{ path('conference', { id: conference.id }) }}">View</a>
+            <a href="{{ path('conference', { id: currentConference.id }) }}">View {{ currentConference }}</a>
+        <header>
+            <ul>
+            {% for conference in conferences %}
+                {% if currentConference != conference %}
+                    <li><a href="{{ path('conference', { id: conference.id })}}"> View {{ conference }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            <hr />
+        </header>
         </p>
     {% endfor %}
 {% endblock %}
